@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="gu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>સીમન્તોન્નયન સંસ્કાર | Baby Shower - Dhara & Sanjay Ramani</title>
+    <meta name="description"
+        content="રામાણી પરિવાર આપનું હાર્દિક સ્વાગત કરે છે - સીમન્તોન્નયન સંસ્કાર (Baby Shower) on Oct 18, 2026">
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="સીમન્તોન્નયન સંસ્કાર | Baby Shower - Dhara & Sanjay">
+    <meta property="og:description"
+        content="રામાણી પરિવાર આપનું હાર્દિક સ્વાગત કરે છે. Sunday, October 18, 2026 at Century Gardens Recreation Centre, Brampton">
+    <meta property="og:image" content="page_1.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tally Embed Script -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #f7f3ec;
+            --card-shadow: 0 10px 30px rgba(78, 59, 44, 0.12);
+            --gold-primary: #b38728;
+            --gold-hover: #966f1e;
+            --dark-text: #2c251e;
+            --accent-green: #3d6a45;
+            --accent-green-hover: #315537;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(#d8ccbe 0.75px, transparent 0.75px),
+                radial-gradient(#d8ccbe 0.75px, var(--bg-color) 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            color: var(--dark-text);
+            font-family: 'Outfit', 'Noto Sans Gujarati', -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* -------------------------------------------------------------
+           FLOWER SHOWER CANVAS (FLOATS ABOVE ALL)
+        ------------------------------------------------------------- */
+        .flower-canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 10005;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* -------------------------------------------------------------
+           SEAMLESS CINEMATIC ENVELOPE OPENING OVERLAY
+        ------------------------------------------------------------- */
+        .envelope-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: radial-gradient(circle at center, #fbf7f0 0%, #eae0d0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s ease;
+            overflow: hidden;
+        }
+
+        .envelope-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .envelope-container {
+            position: relative;
+            perspective: 1400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+            max-width: 440px;
+            padding: 0 16px;
+        }
+
+        .envelope-box {
+            position: relative;
+            width: min(92vw, 400px);
+            height: 260px;
+            background: #e6dac8;
+            border-radius: 16px;
+            box-shadow: 0 24px 50px rgba(78, 59, 44, 0.22);
+            border: 1px solid rgba(179, 135, 40, 0.35);
+            display: flex;
+            justify-content: center;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .envelope-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(78, 59, 44, 0.28);
+        }
+
+        /* Large Card Preview that smoothly zooms into full page size */
+        .envelope-letter {
+            position: absolute;
+            top: 12px;
+            width: 92%;
+            height: 236px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition:
+                transform 1.1s cubic-bezier(0.25, 1, 0.35, 1),
+                height 1.1s cubic-bezier(0.25, 1, 0.35, 1),
+                opacity 0.6s ease,
+                box-shadow 1.1s ease;
+            z-index: 2;
+            transform: translateY(0) scale(0.98);
+        }
+
+        .envelope-letter img {
+            width: 100%;
+            height: auto;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        /* Envelope Pocket (Front folded triangles) */
+        .envelope-pocket {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+            transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s ease;
+        }
+
+        .pocket-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 130px 0 130px min(46vw, 200px);
+            border-color: transparent transparent transparent #ded1bd;
+            border-bottom-left-radius: 16px;
+        }
+
+        .pocket-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 130px min(46vw, 200px) 130px 0;
+            border-color: transparent #d5c5ad transparent transparent;
+            border-bottom-right-radius: 16px;
+        }
+
+        .pocket-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 min(46vw, 200px) 150px min(46vw, 200px);
+            border-color: transparent transparent #cfbd9c transparent;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            filter: drop-shadow(0 -3px 8px rgba(78, 59, 44, 0.08));
+        }
+
+        /* Envelope Top Flap */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            border-style: solid;
+            border-width: 150px min(46vw, 200px) 0 min(46vw, 200px);
+            border-color: #e2d4c0 transparent transparent transparent;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            transform-origin: top center;
+            transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s ease;
+            z-index: 4;
+            filter: drop-shadow(0 4px 6px rgba(78, 59, 44, 0.12));
+        }
+
+        /* Wax Seal Button */
+        .wax-seal {
+            position: absolute;
+            top: 130px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ffd978 0%, #c99327 50%, #875c0e 100%);
+            box-shadow:
+                0 6px 20px rgba(135, 92, 14, 0.45),
+                inset 0 2px 4px rgba(255, 255, 255, 0.6),
+                inset 0 -3px 6px rgba(0, 0, 0, 0.3);
+            border: 2px solid #e8b948;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .wax-seal:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            box-shadow: 0 8px 26px rgba(135, 92, 14, 0.6);
+        }
+
+        .seal-symbol {
+            font-family: 'Noto Sans Gujarati', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #4a2e05;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+            line-height: 1;
+        }
+
+        /* Pulsing Glow Ring around Seal */
+        .seal-pulse {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 147, 39, 0.75);
+            animation: pulse-ring 2s infinite ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.9);
+                opacity: 0.95;
+            }
+
+            70% {
+                transform: scale(1.38);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1.42);
+                opacity: 0;
+            }
+        }
+
+        .envelope-instruction {
+            margin-top: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #4a3b2c;
+            animation: bounce-subtle 2s infinite ease-in-out;
+            transition: opacity 0.4s ease;
+        }
+
+        .instruction-badge {
+            background: linear-gradient(135deg, #b38728, #875c0e);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 8px 22px;
+            border-radius: 24px;
+            box-shadow: 0 4px 14px rgba(135, 92, 14, 0.35);
+            text-transform: uppercase;
+        }
+
+        .instruction-subtitle {
+            font-size: 0.95rem;
+            color: #7d6854;
+            font-weight: 500;
+        }
+
+        @keyframes bounce-subtle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* ENVELOPE OPEN FLUID TRANSITION */
+        .envelope-container.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope-container.open .wax-seal {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+
+        .envelope-container.open .envelope-instruction {
+            opacity: 0;
+        }
+
+        .envelope-container.open .envelope-pocket {
+            transform: translateY(120px) scale(0.9);
+            opacity: 0;
+        }
+
+        /* Letter seamlessly emerges and scales up to match main feed */
+        .envelope-container.open .envelope-letter {
+            transform: translateY(-90px) scale(1.4);
+            height: 400px;
+            box-shadow: 0 35px 75px rgba(0, 0, 0, 0.32);
+            z-index: 5;
+        }
+
+        /* -------------------------------------------------------------
+           MAIN INVITATION CONTENT STYLING
+        ------------------------------------------------------------- */
+        .top-banner {
+            width: 100%;
+            background: linear-gradient(135deg, #2c251e, #4a3b2c);
+            color: #fdfaf6;
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+
+        .top-banner .badge {
+            background: linear-gradient(135deg, #e6c875, #b38728);
+            color: #2c251e;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-replay-envelope {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fdfaf6;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: 6px;
+        }
+
+        .btn-replay-envelope:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Countdown strip */
+        .countdown-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .countdown-digits {
+            font-weight: 700;
+            color: #f6d88c;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Container for Image Pages */
+        .invite-wrapper {
+            max-width: 680px;
+            width: 100%;
+            margin: 20px auto 120px auto;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            animation: fadeInPage 0.8s ease-out;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(179, 135, 40, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(78, 59, 44, 0.18);
+        }
+
+        .page-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .page-number-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(44, 37, 30, 0.7);
+            backdrop-filter: blur(4px);
+            color: #f7f3ec;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Quick Event Details Summary Card - Pista Green Theme */
+        .summary-card {
+            background: linear-gradient(145deg, #eef5eb 0%, #e1ebe0 100%);
+            border-radius: 16px;
+            padding: 28px 24px;
+            box-shadow: 0 12px 32px rgba(45, 74, 50, 0.09);
+            border: 1px solid rgba(77, 114, 82, 0.25);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #b38728, #3d6a45, #b38728);
+        }
+
+        .summary-title {
+            font-family: 'Cinzel', 'Noto Sans Gujarati', serif;
+            font-size: 1.65rem;
+            color: #1a3320;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .summary-subtitle {
+            color: #3d6a45;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            text-align: left;
+            margin-top: 16px;
+        }
+
+        .detail-box {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(77, 114, 82, 0.18);
+            border-left: 4px solid #3d6a45;
+            box-shadow: 0 3px 10px rgba(45, 74, 50, 0.05);
+        }
+
+        .detail-box h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #3a5c41;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .detail-box p {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #172e1d;
+        }
+
+        .detail-box small {
+            display: block;
+            color: #405946;
+            font-size: 0.88rem;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        /* Timeline Schedule Component */
+        .timeline-section {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(77, 114, 82, 0.3);
+            text-align: left;
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 1.15rem;
+            color: #1a3320;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: 'Cinzel', 'Noto Sans Gujarati', serif;
+        }
+
+        .timeline-list {
+            position: relative;
+            padding-left: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Continuous Vertical Line */
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            bottom: 12px;
+            left: 8px;
+            width: 2px;
+            background: linear-gradient(180deg, #3d6a45 0%, #b38728 50%, #3d6a45 100%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(77, 114, 82, 0.2);
+            box-shadow: 0 3px 12px rgba(45, 74, 50, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 18px rgba(45, 74, 50, 0.1);
+        }
+
+        /* Timeline Dot Node */
+        .timeline-dot {
+            position: absolute;
+            left: -29px;
+            top: 16px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #ffd978 0%, #b38728 60%, #875c0e 100%);
+            border: 3px solid #eef5eb;
+            box-shadow: 0 0 0 2px #3d6a45, 0 2px 6px rgba(0, 0, 0, 0.15);
+            z-index: 2;
+        }
+
+        .timeline-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .timeline-time-badge {
+            background: linear-gradient(135deg, #3d6a45, #264e2d);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .timeline-title {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #172e1d;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 0.88rem;
+            color: #405946;
+            margin-top: 3px;
+            line-height: 1.35;
+        }
+
+        /* Dedicated Countdown Block - Pista Green Theme */
+        .countdown-card {
+            background: linear-gradient(145deg, #eef5eb 0%, #e1ebe0 100%);
+            border-radius: 16px;
+            padding: 24px 20px;
+            box-shadow: 0 12px 32px rgba(45, 74, 50, 0.09);
+            border: 1px solid rgba(77, 114, 82, 0.25);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #b38728, #3d6a45, #b38728);
+        }
+
+        .countdown-tag {
+            display: inline-block;
+            background: rgba(61, 106, 69, 0.14);
+            color: #264e2d;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(61, 106, 69, 0.22);
+        }
+
+        .countdown-title {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.4rem;
+            color: #1a3320;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            margin-bottom: 4px;
+        }
+
+        .countdown-subtitle {
+            color: #3d6a45;
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 12px 4px 10px 4px;
+            border: 1px solid rgba(77, 114, 82, 0.2);
+            box-shadow: 0 4px 12px rgba(45, 74, 50, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-num {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #172e1d;
+            line-height: 1.1;
+        }
+
+        .countdown-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #3b5f42;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 480px) {
+            .countdown-grid {
+                gap: 8px;
+            }
+
+            .countdown-num {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* RSVP Embed Section - Pista Green Theme */
+        .rsvp-card {
+            background: linear-gradient(145deg, #eef5eb 0%, #e1ebe0 100%);
+            border-radius: 16px;
+            padding: 28px 20px 20px 20px;
+            box-shadow: 0 12px 32px rgba(45, 74, 50, 0.09);
+            border: 1px solid rgba(77, 114, 82, 0.25);
+            text-align: center;
+            scroll-margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rsvp-title {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.75rem;
+            color: #1a3320;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        .rsvp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3d6a45, #b38728, #3d6a45);
+        }
+
+        .rsvp-tag {
+            display: inline-block;
+            background: rgba(61, 106, 69, 0.14);
+            color: #264e2d;
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(61, 106, 69, 0.22);
+        }
+
+        .rsvp-iframe-wrapper {
+            margin-top: 16px;
+            width: 100%;
+            min-height: 450px;
+        }
+
+        /* Floating Bottom Action Bar */
+        .bottom-action-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 16px max(12px, env(safe-area-inset-bottom)) 16px;
+            box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.12);
+            border-top: 1px solid rgba(179, 135, 40, 0.2);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 18px;
+            border-radius: 30px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-rsvp {
+            flex: 2;
+            background: linear-gradient(135deg, #3d6a45, #2b4e31);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(61, 106, 69, 0.4);
+            font-size: 1.05rem;
+        }
+
+        .btn-rsvp:hover {
+            background: linear-gradient(135deg, #45784e, #315537);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(61, 106, 69, 0.5);
+        }
+
+        .btn-secondary {
+            flex: 1;
+            background: #faf7f2;
+            color: #3b2d20;
+            border: 1px solid #d4c5b3;
+            font-size: 0.88rem;
+            padding: 12px 12px;
+        }
+
+        .btn-secondary:hover {
+            background: #eae2d5;
+            color: #1a1510;
+        }
+
+        .btn svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7d6e5d;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 600px) {
+            .invite-wrapper {
+                padding: 0 10px;
+                gap: 16px;
+                margin-top: 12px;
+            }
+
+            .page-card {
+                border-radius: 12px;
+            }
+
+            .action-buttons {
+                gap: 8px;
+            }
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 10px 12px;
+            }
+
+            .btn-rsvp {
+                font-size: 0.95rem;
+            }
+
+            .top-banner {
+                flex-direction: column;
+                gap: 6px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- -------------------------------------------------------------
+         FLOATING ROSE PETAL SHOWER CANVAS
+    ------------------------------------------------------------- -->
+    <canvas id="flower-canvas" class="flower-canvas"></canvas>
+
+    <!-- -------------------------------------------------------------
+         SEAMLESS CINEMATIC ENVELOPE OPENING OVERLAY
+    ------------------------------------------------------------- -->
+    <div id="envelope-overlay" class="envelope-overlay" aria-label="Invitation Envelope">
+
+        <div class="envelope-container" id="envelope-container">
+            <div class="envelope-box">
+                <!-- Sliding Card Inside -->
+                <div class="envelope-letter" id="envelope-letter">
+                    <img src="page_1.png" alt="Invitation Card Preview">
+                </div>
+
+                <!-- Envelope Flap & Seal -->
+                <div class="envelope-flap" id="envelope-flap"></div>
+
+                <div class="wax-seal" id="wax-seal" title="Click to Open Invitation">
+                    <span class="seal-symbol">શ્રી</span>
+                    <span class="seal-pulse"></span>
+                </div>
+
+                <!-- Envelope Front Pocket -->
+                <div class="envelope-pocket">
+                    <div class="pocket-left"></div>
+                    <div class="pocket-right"></div>
+                    <div class="pocket-bottom"></div>
+                </div>
+            </div>
+
+            <div class="envelope-instruction">
+                <span class="instruction-badge">✉️ Tap to Open Invitation</span>
+                <span class="instruction-subtitle">સીમન્તોન્નયન સંસ્કાર &bull; Dhara &amp; Sanjay</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------
+         MAIN INVITATION PAGE
+    ------------------------------------------------------------- -->
+    <!-- Header Banner -->
+    <header class="top-banner">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="badge">Invitation</span>
+            <button id="btn-replay" class="btn-replay-envelope" title="Replay envelope opening">✉️ Replay</button>
+        </div>
+    </header>
+
+    <!-- Main Invitation Cards Container -->
+    <main class="invite-wrapper">
+
+        <!-- Page 1 -->
+        <article class="page-card" id="first-invitation-card">
+            <img src="page_1.png" alt="Baby Shower Invitation - Page 1" loading="eager">
+        </article>
+
+        <!-- Page 2 -->
+        <article class="page-card">
+            <img src="page_2.png" alt="Baby Shower Invitation - Page 2" loading="lazy">
+        </article>
+
+        <!-- Page 3 -->
+        <article class="page-card">
+            <img src="page_3.png" alt="Baby Shower Invitation - Page 3" loading="lazy">
+        </article>
+
+        <!-- Page 4 -->
+        <article class="page-card">
+            <img src="page_4.png" alt="Baby Shower Invitation - Page 4" loading="lazy">
+        </article>
+
+        <!-- Event Quick Summary & Directions -->
+        <section class="summary-card">
+            <h2 class="summary-title">સીમન્તોન્નયન સંસ્કાર</h2>
+            <p class="summary-subtitle">Baby Shower of Dhara &amp; Sanjay Ramani</p>
+
+            <!-- Date Highlight Banner -->
+            <div class="detail-box"
+                style="margin: 12px auto 0 auto; max-width: 380px; text-align: center; border-left: 4px solid #3d6a45;">
+                <h4>📅 Date &bull; તારીખ</h4>
+                <p style="font-size: 1.08rem;">Sunday, October 18, 2026</p>
+                <small style="color: #3b5f42; font-weight: 600;">રવિવાર, ૧૮ ઓક્ટોબર ૨૦૨૬</small>
+            </div>
+
+            <!-- Event Timeline / Program Schedule -->
+            <div class="timeline-section">
+                <div class="timeline-header">
+                    <span>✨</span>
+                    <span>શુભ કાર્યક્રમ &bull; Event Timeline</span>
+                    <span>✨</span>
+                </div>
+
+                <div class="timeline-list">
+                    <!-- Timeline Item 1: Ceremony -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-top">
+                            <span class="timeline-title">🪔 શુભ મુહૂર્ત (Seemant Ceremony)</span>
+                            <span class="timeline-time-badge">10:30 AM</span>
+                        </div>
+                        <p class="timeline-desc">Traditional rituals, Vedic mantras, and divine blessings for mother and
+                            baby.</p>
+                    </div>
+
+                    <!-- Timeline Item 2: Lunch -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-top">
+                            <span class="timeline-title">🍽️ સ્વરુચિ ભોજન (Festive Lunch)</span>
+                            <span class="timeline-time-badge">12:30 PM</span>
+                        </div>
+                        <p class="timeline-desc">Delicious traditional celebratory Gujarati feast &amp; sweets.</p>
+                    </div>
+
+                    <!-- Timeline Item 3: Dance / Celebration (User can edit/add more) -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-top">
+                            <span class="timeline-title">💃 સંગીત &amp; રાસ-ગરબા (Celebration &amp; Dance)</span>
+                            <span class="timeline-time-badge">1:30 PM</span>
+                        </div>
+                        <p class="timeline-desc">Joyful music, family dance, photobooth, and celebration.</p>
+                    </div>
+
+                    <!-- ➕ YOU CAN DUPLICATE OR ADD MORE TIMELINE ITEMS HERE -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Countdown Card - Pista Theme -->
+        <section class="countdown-card">
+            <h3 class="countdown-title" style="margin-top: 4px;">Our Special Day is Coming In...</h3>
+            <p class="countdown-subtitle">Sunday, October 18, 2026 &bull; 10:30 AM</p>
+
+            <div class="countdown-grid">
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-num" id="cd-seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Embedded Tally RSVP Section -->
+        <section class="rsvp-card" id="rsvp">
+            <h2 class="rsvp-title">RSVP</h2>
+            <p style="color: #2b5533; font-size: 0.95rem; font-weight: 600; margin-bottom: 6px;">
+                🗓️ Please confirm your attendance before <strong>October 4, 2026</strong>
+            </p>
+            <p style="color: #635649; font-size: 0.9rem; margin-bottom: 14px;">Kindly fill in the details below to
+                confirm your presence:</p>
+
+            <div class="rsvp-iframe-wrapper">
+                <iframe
+                    data-tally-src="https://tally.so/embed/kdBMZM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                    loading="lazy" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0"
+                    title="RSVP Form"></iframe>
+            </div>
+        </section>
+
+        <footer>
+            <p>રામાણી પરિવાર આપનું હાર્કિક સ્વાગત કરે છે</p>
+            <p style="margin-top: 6px; font-size: 0.8rem; opacity: 0.8;">શ્રી વિનુભાઈ બચુભાઈ રામાણી &bull; શ્રી સંદીપભાઈ
+                વિનુભાઈ રામાણી</p>
+        </footer>
+
+    </main>
+
+    <!-- Floating Action Bar -->
+    <nav class="bottom-action-bar" aria-label="Invitation Quick Actions">
+        <div class="action-buttons">
+            <!-- Google Maps Directions -->
+            <a href="https://maps.app.goo.gl/rXhAnAvXR9BEqp4d9" target="_blank" rel="noopener" class="btn btn-secondary"
+                title="Get Directions on Google Maps">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Maps</span>
+            </a>
+
+            <!-- Google Calendar One-Click -->
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%E0%AA%B8%E0%AB%80%E0%AA%AE%E0%AA%A8%E0%AB%8D%E0%AA%A4%E0%AB%8B%E0%AA%A8%E0%AB%8D%E0%AA%A8%E0%AA%AF%E0%AA%A8+%E0%AA%B8%E0%AA%82%E0%AA%B8%E0%AB%8D%E0%AA%95%E0%AA%BE%E0%AA%B0+-+Baby+Shower&dates=20261018T143000Z/20261018T180000Z&details=%E0%AA%B0%E0%AA%BE%E0%AA%AE%E0%AA%BE%E0%AA%A3%E0%AB%80+%E0%AA%AA%E0%AA%B0%E0%AA%BF%E0%AA%B5%E0%AA%BE%E0%AA%B0+%E0%AA%86%E0%AA%AA%E0%AA%A8%E0%AB%81%E0%AA%82+%E0%AA%B9%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%A6%E0%AA%BF%E0%AA%95+%E0%AA%B8%E0%AB%8D%E0%AA%B5%E0%AA%BE%E0%AA%97%E0%AA%A4+%E0%AA%95%E0%AA%B0%E0%AB%87+%E0%AA%9B%E0%AB%87&location=Century+Gardens+Recreation+Centre%2C+340+Vodden+St+E%2C+Brampton%2C+ON+L6V+2N2"
+                target="_blank" rel="noopener" class="btn btn-secondary" title="Add to Google Calendar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Calendar</span>
+            </a>
+
+            <!-- RSVP Button (Scrolls to Form) -->
+            <a href="#rsvp" class="btn btn-rsvp" title="RSVP Confirmation">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>RSVP Now</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- -------------------------------------------------------------
+         SCRIPTS: COUNTDOWN + PURE ROSE PETAL SHOWER ENGINE
+    ------------------------------------------------------------- -->
+    <script>
+        // =============================================================
+        // 🌹 PURE ROSE PETAL SHOWER CONFIGURATION
+        // =============================================================
+        const FLOWER_CONFIG = {
+            durationSeconds: 4.0,       // ⏱️ Shower duration (seconds)
+            initialBurstCount: 50,      // Petals bursting on wax seal tap
+            streamRate: 3,              // Falling petals created per animation frame
+            includeGoldShimmer: true,   // ✨ Golden dust sparkles
+            gravity: 1.05,              // Falling speed
+            driftFrequency: 0.045       // Gentle swaying air resistance
+        };
+
+        // 1. Live Countdown
+        const targetDate = new Date('2026-10-18T10:30:00');
+        const countdownEl = document.getElementById('countdown-text');
+        const cdDaysEl = document.getElementById('cd-days');
+        const cdHoursEl = document.getElementById('cd-hours');
+        const cdMinutesEl = document.getElementById('cd-minutes');
+        const cdSecondsEl = document.getElementById('cd-seconds');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                if (countdownEl) countdownEl.textContent = 'Event is live today!';
+                if (cdDaysEl) {
+                    cdDaysEl.textContent = '00';
+                    cdHoursEl.textContent = '00';
+                    cdMinutesEl.textContent = '00';
+                    cdSecondsEl.textContent = '00';
+                }
+                return;
+            }
+
+            const totalSeconds = Math.floor(diff / 1000);
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            if (countdownEl) {
+                countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s left`;
+            }
+
+            if (cdDaysEl) {
+                cdDaysEl.textContent = String(days).padStart(2, '0');
+                cdHoursEl.textContent = String(hours).padStart(2, '0');
+                cdMinutesEl.textContent = String(minutes).padStart(2, '0');
+                cdSecondsEl.textContent = String(seconds).padStart(2, '0');
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // =============================================================
+        // 2. REALISTIC ROSE PETAL CANVAS PHYSICS ENGINE
+        // =============================================================
+        const canvas = document.getElementById('flower-canvas');
+        const ctx = canvas.getContext('2d');
+        let petals = [];
+        let showerStartTime = null;
+        let isShowering = false;
+        let animationFrameId = null;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Romantic Rose Petal Color Palette
+        const PETAL_PALETTES = [
+            { main: '#b71c1c', edge: '#d32f2f', shadow: '#7f0000' }, // Royal Crimson Red
+            { main: '#c2185b', edge: '#e91e63', shadow: '#880e4f' }, // Velvet Ruby
+            { main: '#d81b60', edge: '#f06292', shadow: '#ad1457' }, // Deep Rose Pink
+            { main: '#e91e63', edge: '#ff4081', shadow: '#c2185b' }, // Vibrant Rose Coral
+            { main: '#f06292', edge: '#f8bbd0', shadow: '#d81b60' }, // Soft Blush Pink
+            { main: '#ad1457', edge: '#c2185b', shadow: '#780838' }  // Classic Maroon Rose
+        ];
+
+        const GOLD_DUST_COLORS = ['#ffd700', '#f4c430', '#daa520', '#ffffff', '#e6c875'];
+
+        function createPetalItem(x, y, isBurst = false) {
+            const isSparkle = FLOWER_CONFIG.includeGoldShimmer && (Math.random() < 0.18);
+            const sizeMultiplier = (window.innerWidth < 600) ? 0.85 : 1.0;
+
+            let vx, vy;
+            if (isBurst) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 2.5 + Math.random() * 8.0;
+                vx = Math.cos(angle) * speed;
+                vy = Math.sin(angle) * speed - 3.5;
+            } else {
+                vx = (Math.random() - 0.5) * 3;
+                vy = (1.4 + Math.random() * 2.2) * FLOWER_CONFIG.gravity;
+            }
+
+            const baseSize = isSparkle ? (4 + Math.random() * 3) : (8 + Math.random() * 6);
+
+            return {
+                isSparkle: isSparkle,
+                x: x !== undefined ? x : Math.random() * canvas.width,
+                y: y !== undefined ? y : -25,
+                vx: vx,
+                vy: vy,
+                size: baseSize * sizeMultiplier,
+                rotation: Math.random() * Math.PI * 2,
+                rotationSpeed: (Math.random() - 0.5) * 0.07,
+                swayOffset: Math.random() * Math.PI * 2,
+                swaySpeed: 0.03 + Math.random() * 0.035,
+                tilt: Math.random() * Math.PI,
+                tiltSpeed: 0.02 + Math.random() * 0.04,
+                alpha: 1,
+                palette: PETAL_PALETTES[Math.floor(Math.random() * PETAL_PALETTES.length)],
+                goldColor: GOLD_DUST_COLORS[Math.floor(Math.random() * GOLD_DUST_COLORS.length)]
+            };
+        }
+
+        // Draw Velvety 3D Rose Petal
+        function drawVelvetRosePetal(c, p) {
+            const w = p.size * 0.9;
+            const h = p.size * 1.35;
+            const pal = p.palette;
+
+            c.save();
+
+            // Gradient fill for velvety depth
+            const grad = c.createLinearGradient(-w / 2, -h / 2, w / 2, h / 2);
+            grad.addColorStop(0, pal.edge);
+            grad.addColorStop(0.5, pal.main);
+            grad.addColorStop(1, pal.shadow);
+            c.fillStyle = grad;
+
+            // Heart-curved realistic rose petal shape
+            c.beginPath();
+            c.moveTo(0, -h / 2);
+            c.bezierCurveTo(w * 1.1, -h * 0.35, w * 0.9, h * 0.45, 0, h / 2);
+            c.bezierCurveTo(-w * 0.9, h * 0.45, -w * 1.1, -h * 0.35, 0, -h / 2);
+            c.closePath();
+            c.fill();
+
+            // Soft silk reflection highlight on petal ridge
+            c.fillStyle = 'rgba(255, 255, 255, 0.32)';
+            c.beginPath();
+            c.ellipse(0, -h * 0.15, w * 0.28, h * 0.25, -0.1, 0, Math.PI * 2);
+            c.fill();
+
+            c.restore();
+        }
+
+        // Draw Gold Shimmer
+        function drawShimmer(c, p) {
+            const s = p.size * 0.6;
+            c.save();
+            c.fillStyle = p.goldColor;
+            c.beginPath();
+            c.moveTo(0, -s);
+            c.lineTo(s * 0.32, -s * 0.32);
+            c.lineTo(s, 0);
+            c.lineTo(s * 0.32, s * 0.32);
+            c.lineTo(0, s);
+            c.lineTo(-s * 0.32, s * 0.32);
+            c.lineTo(-s, 0);
+            c.lineTo(-s * 0.32, -s * 0.32);
+            c.closePath();
+            c.fill();
+            c.restore();
+        }
+
+        function startPetalShower(burstX, burstY) {
+            petals = [];
+            isShowering = true;
+            showerStartTime = performance.now();
+
+            // Initial burst when wax seal breaks
+            for (let i = 0; i < FLOWER_CONFIG.initialBurstCount; i++) {
+                petals.push(createPetalItem(burstX, burstY, true));
+            }
+
+            if (!animationFrameId) {
+                animatePetalShower();
+            }
+        }
+
+        function animatePetalShower() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const now = performance.now();
+            const elapsed = (now - showerStartTime) / 1000;
+
+            // Stream new petals while within duration
+            if (isShowering && elapsed < FLOWER_CONFIG.durationSeconds) {
+                for (let i = 0; i < FLOWER_CONFIG.streamRate; i++) {
+                    petals.push(createPetalItem());
+                }
+            } else {
+                isShowering = false;
+            }
+
+            for (let i = petals.length - 1; i >= 0; i--) {
+                const p = petals[i];
+
+                p.x += p.vx + Math.sin(p.swayOffset) * 0.9;
+                p.y += p.vy;
+                p.vy += 0.035; // Gentle gravity
+                p.rotation += p.rotationSpeed;
+                p.tilt += p.tiltSpeed;
+                p.swayOffset += p.swaySpeed;
+
+                // Soft fadeout
+                if (p.y > canvas.height - 80 || elapsed > FLOWER_CONFIG.durationSeconds + 1.5) {
+                    p.alpha -= 0.022;
+                }
+
+                if (p.alpha <= 0 || p.y > canvas.height + 60) {
+                    petals.splice(i, 1);
+                    continue;
+                }
+
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rotation);
+                ctx.scale(Math.cos(p.tilt), 1); // 3D fluttering spin
+                ctx.globalAlpha = Math.max(0, p.alpha);
+
+                if (p.isSparkle) {
+                    drawShimmer(ctx, p);
+                } else {
+                    drawVelvetRosePetal(ctx, p);
+                }
+
+                ctx.restore();
+            }
+
+            if (petals.length > 0 || isShowering) {
+                animationFrameId = requestAnimationFrame(animatePetalShower);
+            } else {
+                animationFrameId = null;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        // =============================================================
+        // 3. ENVELOPE INTERACTIVE OPENING TRIGGER
+        // =============================================================
+        const overlay = document.getElementById('envelope-overlay');
+        const container = document.getElementById('envelope-container');
+        const replayBtn = document.getElementById('btn-replay');
+        let isOpened = false;
+
+        function openEnvelope() {
+            if (isOpened) return;
+            isOpened = true;
+
+            const rect = container.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            container.classList.add('open');
+            startPetalShower(centerX, centerY);
+
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 1100);
+        }
+
+        container.addEventListener('click', openEnvelope);
+
+        // Replay button
+        if (replayBtn) {
+            replayBtn.addEventListener('click', () => {
+                isOpened = false;
+                container.classList.remove('open');
+                overlay.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+
+</html>
